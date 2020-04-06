@@ -21,7 +21,7 @@ class SearchableMovieReviewsContainer extends Component {
                 reviews: json.results
             })
         })
-        .catch(console.log("bad"))
+        .catch(console.log("null"))
     }
 
     handleChange = (event) => {
