@@ -24,10 +24,10 @@ class SearchableMovieReviewsContainer extends Component {
         .catch(console.log("null"))
     }
 
-    handleChange = (event) => {
-        event.preventDefault()
+    handleChange = (e) => {
+        e.preventDefault()
         this.setState({
-            searchTerm: event.target.value
+            searchTerm: e.target.value
         })
     }
 
@@ -39,7 +39,7 @@ class SearchableMovieReviewsContainer extends Component {
     render() {
         return (
             <div>
-                 <form>
+                <form>
                     <input onChange={this.handleChange}></input>
                 </form>
                 <button onClick={this.fetchURL}>Search</button>
