@@ -7,12 +7,12 @@ const URL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?'
             + `api-key=${NYT_API_KEY}`;
 
             class SearchableMovieReviewsContainer extends Component {
-            
+
                 state = {
                     reviews: [],
                     searchTerm: 'dog'
                 }
-            
+
                 fetchURL = () => {
                     fetch(BASE_URL.concat(this.state.searchTerm))
                     .then(res => res.json())
@@ -23,19 +23,19 @@ const URL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?'
                     })
                     .catch(console.log("bad"))
                 }
-            
+
                 handleChange = (event) => {
                     event.preventDefault()
                     this.setState({
                         searchTerm: event.target.value
                     })
                 }
-            
+
                 componentDidMount() {
                     this.fetchURL()
                 }
-            
-            
+
+
                 render() {
                     return (
                         <div>
@@ -48,5 +48,5 @@ const URL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?'
                     )
                 }
             }
-            
+
             export default SearchableMovieReviewsContainer
